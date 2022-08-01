@@ -1,4 +1,7 @@
- int[] guildaR = { 12, 5, 20, 90, 37, 55, 35, 60, 78, 98 };
+class Main {
+  public static void main(String[] args) {    
+    
+    int[] guildaR = { 12, 5, 20, 90, 37, 55, 35, 60, 78, 98 };
     int[] guildaG = { 80, 77, 40, 20, 50, 35, 99, 21, 10, 14 };
     // (guildaR.length - 1) --> index 9
     int[] guildaRinvertido = new int[guildaR.length];

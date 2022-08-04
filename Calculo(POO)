@@ -1,0 +1,60 @@
+package entities;
+
+public class Triangle {
+	
+	public double a;
+	public double b;
+	public double c;
+	
+	public double area() {
+		double p = (a + b + c)/2;
+		double resultado = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+		return resultado;
+	}
+
+}
+
+--//--
+
+package application;
+
+import java.util.Scanner;
+
+import entities.Triangle;
+
+public class Program {
+	
+	 public static void main (String[] args) {
+	
+	Scanner input = new Scanner(System.in);
+	
+	Triangle x, y;
+	x = new Triangle();
+	y = new Triangle();
+	
+	System.out.println("Medidas do triangulo X: ");
+	x.a = input.nextDouble();
+	x.b = input.nextDouble();
+	x.c = input.nextDouble();
+	
+	System.out.println("Medidas do triangulo Y: ");
+	y.a = input.nextDouble();
+	y.b = input.nextDouble();
+	y.c = input.nextDouble();
+	
+	double areaX = x.area();
+	double areaY = y.area();
+	
+	System.out.printf("Area do triangulo X = %.4f" + "\n", areaX);
+	System.out.printf("Area do triangulo Y = %.4f" + "\n", areaY);
+	
+	if (areaX > areaY) {
+		System.out.printf("maior area: triangulo X (%.4f)" + "\n", areaX);
+	} else {
+		System.out.printf("maior area: triangulo Y (%.4f)" + "\n", areaY);
+	}
+	
+	input.close();
+	 
+	 }
+}

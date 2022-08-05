@@ -1,0 +1,47 @@
+Todo ano a sua Guild realiza novos testes de recrutamento, porem nesse momento a guild tem apenas [5 vagas]
+e temos um numero X de candidatos, não podemos recrutar todos.A Guild estabeleceu alguns requisitos para o 
+recrutamento de novos candidatos, vamos olhar os requisitos
+
+REQUISITOS GUILD
+
+Ter força >= 31 e idade <= 25 , existe apenas um caso onde o candidato pode ingressar na guild mesmo que nao
+tenhas esses requisitos, caso ele tenha mais de 50 vitorias , caso ele tenha mais de 50 vitorias ele ja ingressa
+na guild automaticamente , independente se a pessoa tem as condições , observe se a guild tem vaga
+quando um novo candidato ingressar na guild , anexe o nome dele em um vetor
+
+
+--> perceba que na guild as vagas em aberto , estao
+no começo , elas sao representadas por "", quando encontrar um candidato , anexe o nome dele a vaga
+
+exemplo
+
+vagasGuild[] = {"Sasuke","","","","","Tidus","Seth","Tiffa","Mokona"} -- um novo candidato foi anexado a guild
+
+nesse exercicio voce devera criar vetores para armazenar as informações de seus candidatos  
+ 
+ class Main {
+  public static void main(String[] args) {
+  
+  String[] vagasGuild = {"","F","","G","","Tidus","Seth","Tiffa","Mokona"};
+  String[] nome = {"a", "b", "c", "d", "e"};
+  int[] forca = {12, 34, 50, 13, 40};
+  int[] idade = {30, 23, 25, 40, 23};
+  int[] vitorias = {70, 50, 60, 80, 90};
+  int vagas = 5;
+  int index = 0;
+	
+  for(int i = 0; i < vagasGuild.length; i++) {
+
+	if(index <= 4 && vagasGuild[i] == ""){
+		if((vitorias[index] >= 50 || (forca[index] >= 31 && idade[index] <= 25))) {
+    	  vagasGuild[i] = nome[index];
+    	}
+		index++;
+	}
+	  
+	  System.out.println(index);
+  }
+
+  for(int i = 0; i < vagasGuild.length; i++){
+	  System.out.print(" " + vagasGuild[i]);
+  }

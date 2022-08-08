@@ -1,21 +1,3 @@
-package entities;
-
-public class Triangle {
-	
-	public double a;
-	public double b;
-	public double c;
-	
-	public double area() {
-		double p = (a + b + c)/2;
-		double resultado = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-		return resultado;
-	}
-
-}
-
---//--
-
 package application;
 
 import java.util.Scanner;
@@ -57,4 +39,22 @@ public class Program {
 	input.close();
 	 
 	 }
+}
+
+--//--
+
+package entities;
+
+public class Triangle {
+	
+	public double a;
+	public double b;
+	public double c;
+	
+	public double area() {
+		double p = (a + b + c)/2;
+		double resultado = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+		return resultado;
+	}
+
 }

@@ -20,13 +20,26 @@ public class program2 {
 		System.out.println("quantidade em estoque: ");
 		produto.quantity = input.nextInt();
 		
-		input.close();
+		System.out.println(produto);
 		
-		System.out.println(produto);		
+		System.out.println("Quantidade a ser adicionada em estoque: ");
+		int quantity = input.nextInt();
+		produto.AddProduct(quantity);
+		
+		System.out.println("dados atualizados: " + produto);
+		
+		System.out.println("Quantidade a ser removida do estoque: ");
+		quantity = input.nextInt();
+		produto.RemoveProducts(quantity);
+		
+		System.out.println("dados atualizados: " + produto);
+		
+		input.close();	
 
 	}
 
 }
+
 
 --//--
 
@@ -61,7 +74,4 @@ public class Product {
 		+ " unidades, Total: $ "
 		+ String.format("%.2f", TotalValueInStock());
 	}
-
 }
-
-

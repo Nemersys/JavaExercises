@@ -1,0 +1,67 @@
+package application;
+
+import java.util.Scanner;
+
+import entities.Product;
+
+public class program2 {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		Product produto = new Product();
+		
+		System.out.println("insira os dados do produto: ");
+		System.out.println("nome: ");
+		produto.name = input.nextLine();
+		System.out.println("preço: ");
+		produto.price = input.nextDouble();
+		System.out.println("quantidade em estoque: ");
+		produto.quantity = input.nextInt();
+		
+		input.close();
+		
+		System.out.println(produto);		
+
+	}
+
+}
+
+--//--
+
+package entities;
+
+public class Product {
+	
+	public String name;
+	public double price;
+	public int quantity;
+	
+	public double TotalValueInStock() {
+		double total = price * quantity;
+		return total;
+	}
+	
+	public void AddProduct(int quantity) {
+		this.quantity += quantity;
+
+	}
+	
+	public void RemoveProducts(int quantity) {
+		this.quantity -= quantity;
+	}
+	
+	public String toString() {
+		return name
+		+ ", $ "
+		+ String.format("%.2f", price)
+		+ ", "
+		+ quantity
+		+ " unidades, Total: $ "
+		+ String.format("%.2f", TotalValueInStock());
+	}
+
+}
+
+

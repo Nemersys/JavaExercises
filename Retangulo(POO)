@@ -1,0 +1,49 @@
+package application;
+
+import java.util.Scanner;
+import entities.Rectangle;
+
+public class program3 {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		Rectangle ret = new Rectangle();
+		
+		System.out.println("digite a largura e a altura do retnagulo: ");
+	    ret.width = input.nextDouble();
+	    ret.height = input.nextDouble();
+		
+	    System.out.printf("Area = %.2f" + "\n", ret.Area());
+	    System.out.printf("Perimetro = %.2f" + "\n", ret.Perimeter());
+	    System.out.printf("Diagonal = %.2f" + "\n", ret.Diagonal());
+	    input.close();		
+		
+	}
+}
+
+
+--//--
+
+package entities;
+
+public class Rectangle {
+	
+	public double width;
+	public double height;
+
+	public double Area() {
+		return width * height;
+		
+	}
+	
+	public double Perimeter() {
+		return 2 * (width) + (height);
+	}
+	
+	public double Diagonal() {
+		return Math.sqrt(width * width + height * height);
+		
+	}
+}

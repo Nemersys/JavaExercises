@@ -13,7 +13,7 @@ class Main {
 	quais dos seus personagens tem o [MAIOR SALDO] e o [MENOR SALDO];
 	*/
 
-		int[] saldo = {10000,300,15,278,15567,1000,10000,10};
+		int[] saldo = {10000,300,15,278,15567,1000,900,10};
 		
 		int y = 0;
 		int maiorSaldo = 0;

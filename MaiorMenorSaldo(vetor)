@@ -1,0 +1,36 @@
+class Main {
+  public static void main(String[] args) {
+    /*
+	encontre o numero que está faltando na sequencia
+
+	A[] = {1,2,3,5} - FAZER DA FORMA DE SOMA E VERIFICAÇÃO DO OBJETO ADJACENTE
+
+	======================
+	Analisando seus personagens você viu que cada um deles tem um saldo diferente (o saldo será calculado com Numeros inteiros)
+	dado o vetor = {300,15,278,567,120}
+ 
+	com base nesses dados mostre
+	quais dos seus personagens tem o [MAIOR SALDO] e o [MENOR SALDO];
+	*/
+
+		int[] saldo = {10,300,15,278,15567,1000,9000,100};
+		
+
+		int maiorSaldo = saldo[0];
+		int menorSaldo = saldo[0];
+		
+		for (int i = 0; i < saldo.length; i++) {
+			if (saldo[i] > maiorSaldo) {
+				maiorSaldo = saldo[i];
+			}
+			
+			if (saldo[i] < menorSaldo) {
+				menorSaldo = saldo[i];
+			}
+		}
+		
+			System.out.println(maiorSaldo);
+			System.out.println(menorSaldo);
+
+	}
+}

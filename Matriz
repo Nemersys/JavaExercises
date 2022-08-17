@@ -1,0 +1,44 @@
+class Main {
+	  public static void main(String[] args) {
+	  	 
+		/*
+	{ 1,  4,  5}  -- mostre apenas a ultima linha da matriz que tem os valores [9,8,2]
+	{ 7,  6,  3}
+	{[9],[8],[2]}
+
+	========================================================================================
+	{[1],4,5}
+	{7,[6],3}
+	{9,8,[2]}  - a primeira diagonal da matriz tem os valores [1,6,2] - isso significa uma diagonal da matriz
+
+	encontre uma forma de fazer um algoritimo que mostre essa diagonal 
+	========================================================================================
+
+	{1,4,[5]}
+	{7,[6],3}
+	{[9],8,2}  -  agora percorra a proxima diagonal que tem os valores [5,6,9]
+		*/
+    
+  ========================================================================================
+      
+
+	    int[][] matriz1 = {{1,4,5}, {7,6,3}, {9,8,2}};
+	    
+	    for (int i = 0; i < 3; i++) {
+	      System.out.println(matriz1[2][i]);
+	    }
+	    System.out.println("---------------------");
+
+	    for (int i = 0; i < 3; i++) {
+
+	      System.out.println(matriz1[i][i]);
+	    }
+	     System.out.println("---------------------");
+
+		  
+	    for (int i = 0; i < 3; i++) {
+	        System.out.println(matriz1[i][2 - i]);
+	    }
+	    
+	  }
+	}

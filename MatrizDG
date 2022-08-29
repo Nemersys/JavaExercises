@@ -1,0 +1,27 @@
+  class Main {
+  public static void main(String[] args) {
+	  
+	  int[][] poderes = {{30, 40, 50},
+		  			           {57, 65, 34},
+		  			           {98, 43, 21},
+		  			           {9,  12, 13}
+	  				          };
+	  				  
+	  				  
+	  int meuPoder = 50;
+	  int poderDoAmigo = 0;
+	  
+	  for (int i = 0; i < 3; i++) {
+		  for (int j = 0; j < 4; j++) {
+			   int poderTotal = poderes[j][i] + meuPoder;
+			   if (poderTotal >= 90) {
+				   poderDoAmigo = poderes[j][i];
+				   System.out.println("amigo: " + poderDoAmigo);
+				   System.out.println("meu poder: " + meuPoder);
+				   System.out.println("posição: " + j + " " + i);
+			  }
+		  }
+	  }
+	  
+  }
+}

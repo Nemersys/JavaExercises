@@ -1,0 +1,77 @@
+class Main {
+  public static void main(String[] args){
+	  
+  
+  /* Analise das cartelas de Catapot
+
+catapot e um game , onde cada jogador tem uma cartela numerada de 1 a 9
+
+voce escolhe a posição dos numeros da sua cartela exemplo
+
+[2,3,5]
+[4,6,7]
+[8,1,9]
+
+perceba que os numeros que voce escolheu nao estão em sequencia pois foi voce que escolheu 
+
+quando voce termina de decidir a ordem dos numeros na sua cartela , o seu adversario revela a cartela 
+dele
+
+exemplo cartela do adversario
+
+
+[2,4,6]
+[5,7,8]
+[3,1,9]
+
+
+A condição de vitoria e basicamente fazer 2 pontos , e o que seria fazer 2 pontos?
+
+para fazer 1 ponto , o valor da sua cartela deve estar na mesma posição da cartela do oponente
+exemplo
+
+se colocarmos as duas cartelas lado a lado vemos que existem padroes na duas cartelas
+
+[2,3,5]  [2,4,6]      
+[4,6,7]  [5,7,8]
+[8,1,9]  [3,1,9]
+
+
+repare que o numero 2 em ambas as cartelas esta na mesma posição [0][0]  --> isso te concede 1 ponto 
+           o numero 1 em ambas as cartelas esta na mesma posição [2][1]  --> mais 1 ponto
+           o numero 9 em ambas as cartelas esta na mesma posição [2][2]  --> mais 1 ponto
+
+   somando os pontos 1 + 1 + 1 =  3 pontos , como a regra diz que se voce fizer 2 pontos ou mais , isso te garante a vitoria
+
+
+faça um programa que tenha as duas matrizes , a sua e a do adversario
+
+caso voce consiga mais de 2 pontos voce vence , senao o adversario vence */
+
+    int[][] matriz1 = { {2,3,5},
+                        {2,4,6},      
+                        {3,6,7}}; 
+  
+  
+    int[][] matriz2 = { {2,7,8},
+                        {2,1,9},
+                        {3,1,9}};
+
+    int pontos = 0;
+    for (int i = 0; i < matriz1.length; i++) {
+      for (int j = 0; j < matriz1[i].length; j++) {
+        if (matriz1[i][j] == matriz2[i][j]) {
+          pontos += 1;
+        }
+      }
+    }
+
+	System.out.println(pontos);
+
+    if (pontos > 2) {
+      System.out.print("você ganhou");
+    }else{
+      System.out.print("adversário ganhou");
+    }
+  }
+}

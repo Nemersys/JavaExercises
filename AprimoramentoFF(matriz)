@@ -1,0 +1,45 @@
+class Main {
+  public static void main(String[] args){
+	    
+//   Sua guilda esta precisando de um ferreiro habilidoso para aprimorar todas as armas do clan, voce recebe as espadas em forma de uma matriz
+// 3 x 3 de inteiros, nossa matriz ira representar a durabilidade de cada espada exemplo
+
+// espadas  = [54,21,20]
+//             [19,18,17]
+//             [43,32,30]
+
+// a durabilidade de uma espada pode variar entre 0 --> 100 , seu objetivo e analisar se uma espada pode ser reforjada e aprimorada.
+
+// vamos aos requisitos para aprimorar uma espada
+
+// se a diferença entre a durabilidade da espada atual e o proximo multiplo de 5 for menor que 3 --> a espada pode ser aprimorada e seu valor vira o proximo multiplo de 5 :
+
+// exemplo 
+
+// a espada com durabilidade [54] 
+// o proximo multiplo de 5 mais proximo é [55] baseado na durabilidade da espada que é 54
+// analisando a diferença entre a durabilidade e o proximo multiplo temos:  [55 - 54] = 1
+// como 1 <= 3 , a espada pode ser aprimorada , nesse caso sua durabilidade vira o proximo multiplo de 5 que é 
+// [54 = 55]
+
+// caso a espada nao possa ser aprimorada , mantenha o mesmo valor e mostre na tela
+
+// [durabilidade espada + " nao pode ser aprimorada"]
+    
+	int n = 5;
+	int[][] espadas  = {{54,21,20},
+    	               {19,18,17},
+    	               {43,32,30}};
+
+    for (int i = 0; i < espadas.length; i++) {
+      for (int j = 0; j <espadas[i].length; j++) {
+        if(((n - (espadas[i][j] % 5)) + espadas[i][j]) - espadas[i][j] < 3){
+			espadas[i][j] = ((n - (espadas[i][j] % 5)) + espadas[i][j]);
+            System.out.println(espadas[i][j] + " pode ser aprimorada");	   
+		}else {
+          System.out.println(espadas[i][j] + " não pode ser aprimorada");
+        }
+      }
+	}
+  }
+}

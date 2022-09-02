@@ -34,8 +34,8 @@ class Main {
     for (int i = 0; i < espadas.length; i++) {
       for (int j = 0; j <espadas[i].length; j++) {
         if(((n - (espadas[i][j] % 5)) + espadas[i][j]) - espadas[i][j] < 3){
-			espadas[i][j] = ((n - (espadas[i][j] % 5)) + espadas[i][j]);
-            System.out.println(espadas[i][j] + " pode ser aprimorada");	   
+			int espadaAprimorada = ((n - (espadas[i][j] % 5)) + espadas[i][j]);
+            System.out.println(espadas[i][j] + " pode ser aprimorada para: " + (espadaAprimorada));	   
 		}else {
           System.out.println(espadas[i][j] + " não pode ser aprimorada");
         }

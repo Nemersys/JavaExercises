@@ -1,0 +1,44 @@
+package entities;
+
+public class Conta {
+	
+	public String numero;
+	public String agencia;
+	private float saldo;
+	
+	public float getSaldo() {
+		return saldo;
+	}
+	public void depositar(float valorDeposito) {
+		this.saldo = valorDeposito;
+	}
+
+}
+
+--//--
+
+package entities;
+
+import java.util.Scanner;
+
+public class teste {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		Conta conta1 = new Conta();
+		conta1.numero = "0001";
+		conta1.agencia = "0002";
+    
+		System.out.println("Valor do depósito: ");
+		conta1.depositar(scan.nextFloat());
+    
+		float saldoAtual = conta1.getSaldo();
+		System.out.println("saldo atual: " + saldoAtual);
+		
+		scan.close();
+
+	}
+
+}

@@ -1,0 +1,38 @@
+class Main {
+	  public static void main(String[] args) {
+	    /*
+	    [3] Voce ficou responsavel por recrutar novos candidatos para a sua FC, nesse
+	    exercicio voce deve criar um metodo que recebe como parametro 2 parametros
+
+	    String[] nomeGuerreiros
+	    int[] poderGuerreiros
+
+	    com base nesses dois parametros , voce deve descobrir quem dos candidatos tem o maior 
+	    poder
+	    e recrutar o mesmo , para recrutar o candidato , faça seu metodo imprimir
+
+	    O Candidato chamado xxxx , foi recrutado , seu poder de atk é xxx
+	     */
+
+			String[] n = {"A","B","C","D"};
+			int[] j = {12,87,92,109};
+
+			recruit(n,j);
+
+	  }
+
+	  public static void recruit(String[] nomeGuerreiros, int[] poderGuerreiros) {
+	    int maiorPoder = 0;
+	    int index = 0;
+	    for (int i = 0; i < poderGuerreiros.length; i++) {
+	      if (poderGuerreiros[i] > maiorPoder) {
+	        maiorPoder = poderGuerreiros[i];
+					index = i;
+	      }
+	    }
+
+	      System.out.println("O Candidato chamado " + nomeGuerreiros[index] + " foi recrutado , seu poder de atk é "  + maiorPoder); 
+	        
+	  }
+	  
+	}

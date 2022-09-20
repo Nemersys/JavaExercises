@@ -1,0 +1,52 @@
+class Main {
+  public static void main(String[] args) {
+    /*
+     * [2] Voce esta começando a forja da sua Relic Weapon, sua relic weapon precisa
+     * de alguns itens para
+     * que a forja seja feita com sucesso, você esta sem tempo para ir farmar os
+     * itens um por um, por esse
+     * motivo
+     * resolveu gastar um pouco a mais e comprar em um NPC que vendia todos eles
+     * cada item tem um preço, por esse motivo o valor dos itens deve ser armazenado
+     * em um vetor de Float
+     * e voce tem seu Saldo em GIL.
+     * faça um metodo chamado compraNpc , que recebe como parametro um vetor de
+     * float[] como parametro
+     * e verifique se voce pode ou não comprar cada item que esta la, voce devera
+     * ter uma variavel chamada
+     * Saldo , a cada passagem do for voce deve descontar o valor do item
+     * do seu saldo , simulando uma compra
+     * caso seu saldo seja inferior o valor do item ,mostre na tela que você nao
+     * pode comprar aquele item
+     */
+
+    float[] precoItens1 = { 20.0f, 25.0f, 30.0f, 15.0f, 16.0f, 50.0f, 45.0f, 43.0f };
+    float saldoRaizou = 80.0f;
+
+    float[] precoItens2 = { 50.0f, 75.0f, 110.0f, 85.0f, 36.0f, 20.0f, 95.0f, 43.0f };
+    float saldoMokona = 100.0f;
+
+    compraNpc(precoItens1, saldoRaizou);
+
+  }
+
+  public static void compraNpc(float[] preco, float saldo) {
+		int cont = 0;
+    for (int i = 0; i < preco.length; i++) {
+			if(saldo - preco[i] < 0){
+				break;
+			}else{
+				saldo -= preco[i];
+				cont++;
+			}
+     
+    }
+
+		if(cont == preco.length){
+			System.out.println("Eu consegui comprar todos os itens" +  " " + saldo + " qtd" + cont);
+		}else{
+			System.out.println("Nao consegui comprar todos os itens" + " " + saldo + " qtd: " + cont);
+		}
+
+  }
+}

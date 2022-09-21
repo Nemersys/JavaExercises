@@ -1,0 +1,45 @@
+class Main {
+  public static void main(String[] args) {
+    /*
+     * [4] Exercicio analise de qual guilda é a mais forte
+     * 
+     * Crie um metodo que consiga calcular qual guilda e mais forte , seu metodo
+     * recebe como parametro 2 parametros
+     * 
+     * int[] a = vetor com poder de ataque dos membros da guilda a
+     * int[] b = vetor com poder de ataque dos membros da guilda b
+     * 
+     * a guilda mais forte sera definida pela soma dos poderes de cada vetor
+     * 
+     * 
+     * se os guerreiros da guilda [a] forem mais fortes que os da guilda [b]
+     * --> imprima a guilda [a] é mais forte
+     * 
+     * senão
+     * --> imprima a guilda [b] é a mais forte
+     * 
+     */
+
+    int[] guilda1 = { 1, 2, 3, 4, 5, 6 };
+    int[] guilda2 = { 1, 1, 2, 3, 4, 5 };
+
+    melhorGuilda(guilda1, guilda2);
+  }
+
+  public static void melhorGuilda(int[] a, int[] b) {
+    int guildaA = 0;
+    int guildaB = 0;
+    for (int i = 0; i < a.length; i++) {
+      guildaA += a[i];
+      guildaB += b[i];
+    }
+
+    if (guildaA > guildaB) {
+      System.out.println("guilda mais forte: guilda A " + "(" + guildaA + ")");
+    } else {
+      System.out.println("guilda mais forte: guilda B " + "(" + guildaB + ")");
+    }
+
+  }
+
+}

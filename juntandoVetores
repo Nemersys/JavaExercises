@@ -1,0 +1,34 @@
+class Main {
+  public static void main(String[] args) {
+    // sua ultima ideia deu muito certo para o clã , porem o clã esta lotado e esta
+    // dificil para apenas uma pessoa controlar tudo
+    // como uma boa estrategista , voce decidiu que seria melhor criar um segundo
+    // mini clãn ,
+    // focado em GVG , utilizando os dados do programa
+    // anterior , crie um novo vetor que terá como integrantes todos os guerreiros
+    // dos dois
+    // vetores, exemplo:
+
+    // exemplo
+    // vetor_candidatosA = {15,14,10,8,7};
+    // vetor_candidatosB = {20,12,10,8,9};
+    // vetor_nova_guilda = {15,14,10,8,7,20,12,10,8,9};
+
+    int[] candidatosA = { 15, 14, 10, 8, 7 };
+    int[] candidatosB = { 20, 12, 10, 8, 9 };
+    int[] novaGuilda = new int[candidatosA.length + candidatosB.length];
+
+    for (int i = 0; i < candidatosA.length; i++) {
+      novaGuilda[i] = candidatosA[i];
+    }
+
+    for (int j = candidatosB.length; j < novaGuilda.length; j++) {
+      novaGuilda[j] = candidatosB[j - candidatosB.length];
+    }
+
+    for (int k = 0; k < novaGuilda.length; k++)
+      System.out.println(novaGuilda[k]);
+
+  }
+
+}

@@ -1,0 +1,44 @@
+
+class Main {
+  public static void main(String[] args) {
+
+// [0.2] Voce recebeu a tarefa de calcular o poder total de uma guilda.Para isso faça um metodo que receba como parametro um vetor de inteiros , representando o poder dos membros daquela guilda, o poder total
+// de uma guilda e definido pela soma total dos poderes daquele vetor.
+
+// implemente o metodo de calcular poder para as duas guildas 
+
+// guildaA = {12,34,56,90}
+// guildaB = {56,98,43,21} 
+
+
+// depois de calcular o poder das duas guildas, verifique qual das guildas é a mais forte
+  int[] v = {12,34,56,90};
+	int[] b = {56,98,43,21};
+
+	int poderGuildV = calculaGuild(v);
+	int poderGuildB = calculaGuild(b);
+
+	compararPoder("Guilda V","Guilda B",poderGuildV,poderGuildB);
+
+		
+	
+  }
+
+	public static void compararPoder(String nomeA,String nomeB, int a, int b){
+		if(a > b){
+			System.out.println("a guilda " + nomeA + " e a mais forte com o poder de: " + a);
+		}else{
+			System.out.println("a guilda " + nomeB + " e a mais forte com o poder de: " + b);
+		}
+	}
+
+  
+	public static int calcularGuild(int[] guilda){
+		int somaTotal = 0;
+		for(int i = 0; i < guilda.length; i++){
+			somaTotal+=guilda[i];
+		}
+
+		return somaTotal;
+	}
+}

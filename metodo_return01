@@ -1,0 +1,18 @@
+
+class Main {
+  public static void main(String[] args) {
+
+    
+  int guerreiroMaisForte = guerreiros(12, 13);
+  System.out.print("guerreiro mais forte: " + guerreiroMaisForte);
+    
+  }
+
+	public static int guerreiros(int guerreiroA, int guerreiroB){
+    if (guerreiroA > guerreiroB) {
+      return guerreiroA;
+    } else {
+      return guerreiroB;
+    }
+  }
+}

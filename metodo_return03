@@ -1,0 +1,41 @@
+
+class Main {
+  public static void main(String[] args) {
+
+// [0.3] Faça um metodo que receba como parametro um vetor de inteiros, seu objetivo é descobrir o maior
+// e o menor valor daquele vetor , e retornar a soma do maior valor + menor valor
+// exemplo
+
+// v = [12,30,10,90,80]
+
+// maior valor = 90
+// menor valor = 10
+
+// return (90 + 10)
+    int[] v = {12,34,45,67,89};
+    int soma = somaVetor(v);
+
+    System.out.println(soma);
+		
+
+	}
+
+  public static int somaVetor (int[] vetor) {
+    int maiorValor = 0;
+    int menorValor = vetor[0];
+
+    for (int i = 0; i < vetor.length; i++) {
+      if (vetor[i] > maiorValor) {
+        maiorValor = vetor[i];
+      }
+      
+      if (vetor[i] < menorValor) {
+        menorValor = vetor[i];
+      }
+    }
+
+    return maiorValor + menorValor;
+    
+  }
+  
+}

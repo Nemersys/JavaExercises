@@ -1,0 +1,36 @@
+
+class Main {
+  public static void main(String[] args) {
+    /*
+     * [1] - Voce esta avaliando preços de Cajados para seu whiteMage no catalogo do
+     * MarketBoard
+     * para isso voce recebeu um vetor de float com os preços de cada Cajado, para
+     * que voce nao precise
+     * ficar verificando qual deles é o mais caro, faça um metodo que receba como
+     * parametro um vetor
+     * de float[] e retorne o item mais caro daquela lista
+     * 
+     * exemplo:
+     * 
+     * float[] cajados = {110.0f,114.5f,200.0f,300.0f,556.0f}; --> Cajado valor
+     * 556.0f
+     */
+
+    float[] cajados = { 110.0f, 114.5f, 200.0f, 300.0f, 556.0f };
+
+    float maisCaro = verificarPrecos(cajados);
+
+    System.out.println("O Cajado mais caro custa " + maisCaro);
+
+  }
+
+  public static float verificarPrecos(float[] cajados) {
+    float cajadoMaisCaro = 0;
+      for (int i = 0; i < cajados.length; i++) {
+        if (cajados[i] > cajadoMaisCaro) {
+          cajadoMaisCaro = cajados[i];
+       }
+      }
+          return cajadoMaisCaro;
+  }
+}

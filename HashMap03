@@ -1,0 +1,34 @@
+import java.util.HashMap;
+import java.util.Map;
+
+class Main {
+  public static void main(String[] args) {
+    // Voce deve criar dois HashMaps e verificar o primeiro , caso algum valor nao se repita adicione ele no segundo hashmap
+     Map<Integer,String> dicionario = new HashMap<>();
+     Map<Integer,String> dicionario2 = new HashMap<>();
+
+		//put
+		//get
+		//contains
+		//keySet
+		//for()
+
+    dicionario.put(1,"SER");
+    dicionario.put(2,"SER");
+    dicionario.put(3,"JOS");
+    dicionario.put(4,"JOS");
+		dicionario.put(5,"MAA");
+		dicionario.put(6,"MAA");
+
+    for (Integer x: dicionario.keySet()) {
+      if (!dicionario2.containsValue(dicionario.get(x))) {
+        dicionario2.put(x, dicionario.get(x)); 
+      } 
+    }
+
+    System.out.println(dicionario2);
+
+		
+
+  }
+}

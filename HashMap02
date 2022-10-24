@@ -1,0 +1,34 @@
+import java.util.HashMap;
+import java.util.Map;
+
+class Main {
+  public static void main(String[] args) {
+    Map<Integer, Integer> dicionario = new HashMap<>();
+		dicionario.put(50,2);
+		dicionario.put(40,8);
+		dicionario.put(1,20);
+
+		dicionario.replace(40,500); //troca o valor associado a chave
+    System.out.println(dicionario.get(50)); //busca o valor associado a chave
+		System.out.println(dicionario.keySet()); //retorna um vetor com todas as chaves do dicionario
+
+
+
+		//PERCORRA O DICIONARIO E VERIFIQUE QUAIS CHAVES SÃO MAIORES QUE 10, CASO A CHAVE SEJA MAIOR QUE 10, MULTIPLIQUE O VALOR ASSOCIADO
+		//A CHAVE POR 2 EXEMPLO
+
+		//50 > 10 ? TRUE  2 X 2 = 4
+		//40 > 10 ? TRUE  8 X 2  16
+		//1 > 10  ? FALSE NAO FAZ NADA
+
+    
+    for (Integer x: dicionario.keySet()) {
+      if (x > 10) {
+        dicionario.replace(x, (dicionario.get(x) * 2));
+      }
+    }
+
+    System.out.println(dicionario);
+
+  }
+}

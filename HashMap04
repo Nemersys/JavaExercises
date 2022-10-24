@@ -1,0 +1,25 @@
+import java.util.HashMap;
+import java.util.Map;
+
+class Main {
+  public static void main(String[] args) {
+     Map<String,Integer> dicionario = new HashMap<>();
+   
+     dicionario.put("S",20);
+     dicionario.put("A",40);
+     dicionario.put("B",50);
+     dicionario.put("C",12);
+		 dicionario.put("D",8);
+		 dicionario.put("E",7);
+
+
+    int maiorValor = 0;
+    for (String x: dicionario.keySet()) {
+      if (dicionario.get(x) > maiorValor) {
+        maiorValor = dicionario.get(x);
+      }
+    }
+
+      System.out.print(maiorValor);
+  }
+}

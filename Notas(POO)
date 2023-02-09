@@ -1,0 +1,53 @@
+package app;
+
+import entities.*;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Aluno novoaluno = new Aluno();
+
+        System.out.println("nome do aluno: ");
+        novoaluno.aluno = sc.nextLine();
+
+        System.out.println("notas do aluno: ");
+        novoaluno.notasPT = sc.nextDouble();
+        novoaluno.notasST = sc.nextDouble();
+        novoaluno.notasTT = sc.nextDouble();
+
+
+        novoaluno.notaFinal();
+
+        sc.close();
+
+
+    }
+
+}
+
+--//--
+
+package entities;
+
+public class Aluno {
+
+    public String aluno;
+    public double notasPT;
+    public double notasST;
+    public double notasTT;
+
+    public void notaFinal() {
+        System.out.println(aluno);
+        double notaTotal = notasPT + notasST + notasTT;
+        if (notaTotal < (95 * 60 / 100)) {
+            System.out.println("FAILED: ");
+            double pontos = ((95 * 60 / 100) - notaTotal);
+            System.out.println("faltam " + pontos + "pontos");
+        } else {
+            System.out.println("PASS: " + notaTotal + "pontos");
+        }
+    }
+}

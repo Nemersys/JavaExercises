@@ -1,26 +1,27 @@
-package application;
+package app;
 
+import entities.*;
+import java.util.Locale;
 import java.util.Scanner;
-import entities.Rectangle;
 
-public class program3 {
+public class Main {
 
-	public static void main(String[] args) {
-		
-		Scanner input = new Scanner(System.in);
-		
-		Rectangle ret = new Rectangle();
-		
-		System.out.println("digite a largura e a altura do retnagulo: ");
-	    ret.width = input.nextDouble();
-	    ret.height = input.nextDouble();
-		
-	    System.out.printf("Area = %.2f" + "\n", ret.Area());
-	    System.out.printf("Perimetro = %.2f" + "\n", ret.Perimeter());
-	    System.out.printf("Diagonal = %.2f" + "\n", ret.Diagonal());
-	    input.close();		
-		
-	}
+    public static void main (String[] args) {
+
+        Retangulo retangulo = new Retangulo();
+
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Insira o comprimento do retângulo: ");
+        retangulo.height = sc.nextDouble();
+
+        System.out.print("Insira a largura do retângulo: ");
+        retangulo.width = sc.nextDouble();
+
+        System.out.print(retangulo);
+
+    }
 }
 
 
@@ -28,22 +29,27 @@ public class program3 {
 
 package entities;
 
-public class Rectangle {
-	
-	public double width;
-	public double height;
+public class Retangulo {
 
-	public double Area() {
-		return width * height;
-		
-	}
-	
-	public double Perimeter() {
-		return 2 * (width) + (height);
-	}
-	
-	public double Diagonal() {
-		return Math.sqrt(width * width + height * height);
-		
-	}
+    public double width;
+    public double height;
+
+    public double area() {
+        return width * height;
+    }
+
+    public double perimeter() {
+        return (width * 2) + (height * 2);
+    }
+
+    public double diagonal() {
+        return Math.sqrt(height * height + width * width);
+    }
+
+    public String toString() {
+        return "area: " + area()
+            +  ", perimetro: " + perimeter()
+            +  ", diagonal: " + diagonal();
+    }
+
 }

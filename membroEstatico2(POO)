@@ -1,0 +1,39 @@
+package app;
+
+import util.Conversor;
+
+import java.util.Scanner;
+
+import static util.Conversor.conversor;
+
+public class Main {
+
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("cotação do dolar: ");
+        double cotacaoDollar = sc.nextDouble();
+        System.out.println("quantidade: ");
+        double amount = sc.nextDouble();
+
+        System.out.printf("reais: %2f%n", Conversor.conversor(cotacaoDollar, amount));
+
+        sc.close();
+    }
+
+}
+
+--//--
+
+package util;
+
+public class Conversor {
+
+    public static final double IOF = 0.06;
+
+public static double conversor(double cotacaoDollar, double amount)  {
+    amount += (amount * IOF);
+    return cotacaoDollar * amount;
+    }
+}
+

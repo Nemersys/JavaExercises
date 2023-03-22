@@ -1,0 +1,118 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Product;
+
+public class App {
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Product product;
+		
+		System.out.println("Enter account number: ");
+		int accNumber = sc.nextInt();
+		
+		System.out.println("Enter account holder: ");
+		sc.nextLine();
+		String accName = sc.nextLine();
+		
+		System.out.println("Is there an initial deposit? (y/n)");
+		char response = sc.next().charAt(0);
+		
+		if (response == 'y') {
+			System.out.println("Enter initial deposit value: ");
+			double initialDeposit = sc.nextDouble();
+			product = new Product(accNumber, accName, initialDeposit);
+		} else {
+			product = new Product(accNumber, accName);
+		}
+		
+		System.out.println();
+		System.out.println("Account: ");
+		System.out.println(product);
+		
+		System.out.println();
+		System.out.print("Enter a deposit value: ");
+		double depositValue = sc.nextDouble();
+		product.deposit(depositValue);
+		System.out.println("Updated account data: ");
+		System.out.println(product);
+		
+		System.out.println("withdraw? (y/n)");
+		response = sc.next().charAt(0);
+		
+		if (response == 'y') {
+			System.out.println("Enter withdraw value: ");
+			double withdrawValue = sc.nextDouble();
+			product.withdraw(withdrawValue);
+		}
+		
+		System.out.println("Updated account data: ");
+		System.out.println(product);
+		
+		
+		sc.close();
+	}
+}
+
+--//--
+
+package entities;
+
+public class Product {
+	
+	private int accNumber;
+	private String accName;
+	private double balance;
+	
+	public Product(int accNumber, String accName) {
+		this.accNumber = accNumber;
+		this.accName = accName;
+	}
+	
+	public Product(int accNumber, String accName, double initialDeposit) {
+		this.accNumber = accNumber;
+		this.accName = accName;
+		this.balance = balance;
+		deposit(initialDeposit);
+	}
+	
+
+	public int getAccNumber() {
+		return accNumber;
+	}
+
+	public String getAccName() {
+		return accName;
+	}
+
+	public void setAccName(String accName) {
+		this.accName = accName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void deposit(double amount) {
+		balance += amount;
+		
+	}
+	
+    public void withdraw(double withdraw) {
+    	balance -= withdraw + 5.0;
+		
+	}
+    
+    public String toString() {
+    	return "Account "
+    			+ accNumber
+    			+ ", Holder: "
+    			+ accName
+    			+ ", Balance: $"
+    			+ String.format("%.2f", balance);
+    }
+	
+}

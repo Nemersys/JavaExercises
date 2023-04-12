@@ -1,66 +1,51 @@
 package app;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-import entities.Client;
-import entities.Order;
-import entities.OrderItem;
-import entities.OrderStatus;
-import entities.Product;
+import entities.Employee;
+import entities.OutsourcedEmployee;
 
 public class Main {
 
-	public static void main(String[] args) throws ParseException {
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter client data:");
-		System.out.print("Name: ");
-		String name = sc.nextLine();
-		System.out.print("Email: ");
-		String email = sc.next();
-		System.out.print("Birth date (DD/MM/YYYY): ");
-		Date birthDate = sdf.parse(sc.next());
-		
-		Client client = new Client(name, email, birthDate);
-		
-		System.out.println("Enter order data");
-		System.out.println("Status: ");
-		OrderStatus status = OrderStatus.valueOf(sc.next());
-		
-		Order order = new Order(new Date(), status, client);
-		
-		System.out.println("how many items?");
-		Integer q = sc.nextInt();
-		
-		for (int i = 0; i< q; i++) {
-			System.out.println("Enter #" + (i + 1) + " item data:");
-			System.out.println("product name: ");
-			sc.nextLine();
-			String productName = sc.nextLine();
-			System.out.println("product price: ");
-			double productPrice = sc.nextDouble();
-			System.out.println("quantity: ");
-			int quantity = sc.nextInt();
+		List<Employee> lista = new ArrayList<>();
 			
-			Product product = new Product(productName, productPrice);
+		System.out.println("quantos?");
+		int q = sc.nextInt();
 			
-			OrderItem it = new OrderItem(quantity, productPrice, product);
+		for (int i = 0; i < q; i++) {			
+			System.out.println("terceirizado? (y/n)");
+			char terc = sc.next().charAt(0);
+			System.out.println("nome:");
+			String name = sc.next();
+			System.out.println("horas trabalhadas:");
+			int hours = sc.nextInt();
+			System.out.println("valor por hora:");
+			double valuePerHour = sc.nextDouble();
 			
-			order.addItem(it);
+			if (terc == 'y') {
+				System.out.println("add charge: ");
+				double additionalCharge = sc.nextDouble();
+					
+				Employee emp = new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge);
+				lista.add(emp);
+			} else {
+				Employee emp = new Employee(name, hours, valuePerHour);
+				lista.add(emp);
+			}
 		}
-		
-		System.out.println(order);
-		
-		
-		
-		sc.close();
-
-	}
-
+			
+		for (Employee i : lista) {
+			System.out.println(i);
+			System.out.println("pagamento:" + i.payment());
+				
+			sc.close();
+	    }
+    }
 }
+

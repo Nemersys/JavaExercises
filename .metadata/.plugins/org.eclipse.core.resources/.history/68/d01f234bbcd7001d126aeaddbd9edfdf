@@ -1,0 +1,63 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Employee;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+				
+		System.out.println("how many employees?");
+		int employeeNumber = sc.nextInt();
+		
+		List<Employee> empList = new ArrayList<>();
+		
+		for (int i = 1; i <= employeeNumber; i++) {
+			System.out.println("Employee " + i);
+			System.out.println("ID: ");
+			Integer id = sc.nextInt();
+			System.out.println("name: ");
+			sc.next();
+			String name = sc.next();
+			System.out.println("salary: ");
+			double salary = sc.nextDouble();
+			
+			Employee employee = new Employee(id, name, salary);
+			
+			empList.add(employee);
+		}
+		
+		System.out.println("employee id: ");
+		Integer employeeId = sc.nextInt();
+		Integer pos = position(empList, employeeId);
+		if (pos == null) {
+			System.out.println("não exsite");
+		} else {
+			System.out.println("%: ");
+			double percentage = sc.nextDouble();
+			
+			empList.get(pos).increaseSalary(percentage);
+		}
+
+		
+		
+		
+		System.out.println("employee list:" );
+
+	}
+	
+	public  static Integer position(List<Employee> list, int id) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == id) {
+				return i;
+			}
+		}
+		return null;
+	}
+
+}

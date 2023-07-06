@@ -1,0 +1,19 @@
+package chess;
+
+import boardgame.Position;
+
+public class ChessPosition extends Position {
+	
+	private char column;
+	private int row;
+	
+	public Position toPosition() {
+		
+	}
+	
+	public ChessPosition fromPosition(Position) {
+		return position;
+		
+	}
+
+}

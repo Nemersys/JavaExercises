@@ -1,0 +1,33 @@
+package app;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+import entities.Reservation;
+
+public class Main {
+    public static void main(String[] args) throws ParseException {
+
+    	Scanner sc = new Scanner(System.in);
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    	
+    	System.out.println("room number: ");
+    	int number = sc.nextInt();
+    	System.out.println("checkin date: ");
+    	Date checkIn = sdf.parse(sc.next());
+    	System.out.println("checkout date: ");
+    	Date checkOut = sdf.parse(sc.next());
+    	
+    	if (!checkOut.after(checkIn)); {
+    		System.out.println("checkout must be after checkin");
+    	} else {
+    		Reservation reservation = new Reservation(number, checkIn, checkOut);
+    		System.out.println("reservation: " + reservation);
+    	}
+    	
+    	
+    	
+    }
+}

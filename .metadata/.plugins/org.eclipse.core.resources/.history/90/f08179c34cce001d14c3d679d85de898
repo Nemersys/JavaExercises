@@ -1,0 +1,11 @@
+package entities;
+
+public class Conta {
+	
+	private Integer number;
+	private String holder;
+	private Double balance;
+	
+	
+
+}

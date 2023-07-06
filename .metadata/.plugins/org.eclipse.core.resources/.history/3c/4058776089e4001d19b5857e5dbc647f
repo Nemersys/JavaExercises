@@ -1,0 +1,29 @@
+package app;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String calculo = sc.nextLine();
+		
+		 System.out.println(conversor(calculo));
+		
+		
+  }
+	
+	public static int conversor(String calculo) {
+		String[] vect = calculo.split(" ");
+		int soma = 0;
+		if (vect[1].equals("+")) {
+			int numero1 = Integer.parseInt(vect[0]);
+			int numero2 = Integer.parseInt(vect[2]);
+			soma = numero1 + numero2;
+		}
+		return soma;
+	}
+	
+}

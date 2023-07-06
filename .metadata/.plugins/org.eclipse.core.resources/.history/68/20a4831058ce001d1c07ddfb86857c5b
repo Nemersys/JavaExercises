@@ -1,0 +1,50 @@
+package application;
+
+import java.util.Scanner;
+
+public class Vetores {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.println("tamanho do vetor: ");
+		int n = sc.nextInt();
+		int[] vetorN = new int[n];
+		
+		for (int i = 0; i < n; i++) {
+			System.out.println("digite um numero: ");
+			int numero = sc.nextInt();
+			vetorN[i] = numero;
+		}
+		
+		System.out.println("valores: ");
+		for (int i = 0; i < n; i++) {
+			System.out.println(vetorN[i]);
+		}
+		
+		System.out.println("soma:");
+		
+		int somaTotal = 0;
+		for (int i = 0; i < n; i++) {
+			int soma = vetorN[i];
+			somaTotal += soma;
+		}
+		
+		System.out.println(somaTotal);
+		
+		System.out.println("tamanho do vetor");
+		System.out.println(n);
+		
+		System.out.println("media: ");
+		
+		int media = somaTotal/n;
+		
+		
+		System.out.println(media);
+		
+		
+		
+		sc.close();
+
+	}
+}

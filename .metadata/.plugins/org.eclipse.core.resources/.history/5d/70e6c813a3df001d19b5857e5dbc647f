@@ -1,0 +1,29 @@
+package entities;
+
+public class BusinessAccount extends Account {
+	
+	private Double interestRate;
+	
+	public BusinessAccount() {
+		
+	}
+
+	public BusinessAccount(Double interestRate) {
+		super();
+		this.interestRate = interestRate;
+	}
+
+	public Double getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(Double interestRate) {
+		this.interestRate = interestRate;
+	}
+	
+	public void updatedBalance() {
+		setBalance(interestRate);
+	}
+	
+
+}

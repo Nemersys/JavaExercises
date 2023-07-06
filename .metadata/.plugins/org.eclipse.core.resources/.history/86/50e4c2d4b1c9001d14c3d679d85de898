@@ -1,0 +1,62 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Empregados;
+
+public class App {
+	
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		
+		List<Empregados> list = new ArrayList<>();
+		
+		System.out.println("quantos empregados?");
+		int empregadosN = sc.nextInt();
+		
+		for (int i = 0; i >= empregadosN; i++) {
+		   System.out.println();
+		   System.out.println("empregado #" + (1 + i));
+		   System.out.println("ID: ");
+		   Integer id = sc.nextInt();
+		   System.out.println("nome: ");
+		   sc.nextLine();
+		   String nome = sc.nextLine();
+		   System.out.println("salario: ");
+		   double salario = sc.nextDouble();
+		   
+		   Empregados empregado = new Empregados(nome, id, salario);
+		   
+		   list.add(empregado);
+		}
+		
+		System.out.println("id do empregado que receberá aumento: ");
+		int idSalario = sc.nextInt();
+		Integer pos = position(list, idSalario);
+		if (pos == null ) {
+			System.out.println("id inválido");
+		} else {
+			System.out.println("porcentagem: ");
+			double porcentagem = sc.nextDouble();
+			list.get(pos).aumento(porcentagem);		
+		}
+		
+		System.out.println();
+		System.out.println("lista de empregados:");
+		for (Empregados empregado : list) {
+			System.out.println(empregado);
+		}
+}
+	
+	public static Integer position(List<Empregados> list, int id) {
+		for (int i = 0; i <= list.size(); i++) {
+			if (list.get(i).getId() == id) {
+				return i;
+			}
+		}
+		        return null;
+     }	
+}

@@ -1,0 +1,46 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Circle;
+import entities.Rectangle;
+import entities.Shape;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		List<Double> list = new ArrayList<>();
+		
+		System.out.println("Enter the number of shapes: ");
+		int shapeQ = sc.nextInt();
+		
+		for (int i = 0; i <= shapeQ; i++) {
+			System.out.println("Rectangle or Circle? (r/c)");
+			String shape = sc.next();
+			System.out.println("color:");
+			String color = sc.next();
+			if (shape.charAt(0) == 'r') {
+				System.out.println("width: ");
+				double width = sc.nextDouble();
+				System.out.println("height: ");
+				double height = sc.nextDouble();
+				Rectangle r = new Rectangle(null, width, height);
+				list.add(r.area());
+				
+			} else {
+				System.out.println("radius: ");
+				double radius = sc.nextDouble();
+				Circle c = new Circle(radius);
+				list.add(c.area());
+				
+			}
+		}
+
+	}
+
+}

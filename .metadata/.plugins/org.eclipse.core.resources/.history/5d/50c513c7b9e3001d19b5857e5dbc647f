@@ -1,0 +1,33 @@
+package entities;
+
+public abstract class Shape extends Circle {
+	
+	protected Color color;
+	
+	public Shape() {
+		
+	}
+	
+	public Shape(Color color) {
+		super();
+		this.color = color;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
+	public Double area() {
+		if shape == 'r' {
+		   return width * height;
+		} else {
+			return radius * (3,14 * 3,14);
+		}
+		
+	}
+
+}

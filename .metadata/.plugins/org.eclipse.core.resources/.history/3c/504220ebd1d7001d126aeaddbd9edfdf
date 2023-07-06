@@ -1,0 +1,25 @@
+package app;
+
+import java.text.SimpleDateFormat;
+
+import entities.Comment;
+import entities.Post;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy HH:mm:ss");
+		
+		Comment c1 = new Comment("nice trip");
+		Comment c2 = new Comment("irado parça");
+		
+		Post p1 = Post(
+				  sdf.parse("21/06/2018 13:05:44") ,
+				  "traveling to NZ",
+				  "vo pae tbm",
+				  12);
+
+	}
+
+}

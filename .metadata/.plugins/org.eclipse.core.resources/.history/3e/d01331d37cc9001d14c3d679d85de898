@@ -1,0 +1,27 @@
+package entities;
+
+public class Account {
+	
+	private int accNumber;
+	private String accName;
+	private double balance;
+	
+	public Account(int accNumber, String accName, double balance) {
+		this.accNumber = accNumber;
+		this.accName = accName;
+		this.balance = balance;
+	}
+	
+	public Account(int accNumber, String accName) {
+		this.accNumber = accNumber;
+		this.accName = accName;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

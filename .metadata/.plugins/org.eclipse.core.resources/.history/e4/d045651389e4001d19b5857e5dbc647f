@@ -1,0 +1,34 @@
+package app;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String[] vect = sc.nextLine().split(" ");
+		
+			if (vect[1].equals("+")) {
+				int number1 = Integer.parseInt(vect[0]);
+				int number2 = Integer.parseInt(vect[2]);
+				System.out.println(number1 + number2);
+			} else if (vect[1].equals("-")) {
+				int number1 = Integer.parseInt(vect[0]);
+				int number2 = Integer.parseInt(vect[2]);
+				System.out.println(number1 - number2);
+			}
+		}
+	
+	public int conversor(String calculo) {
+		String[] vect = calculo.split(" ");
+		int soma = 0;
+		if (vect[1].equals("+")) {
+			int numero1 = Integer.parseInt(vect[0]);
+			int numero2 = Integer.parseInt(vect[2]);
+			soma = numero1 + numero2;
+		}
+		return soma;
+	}
+}

@@ -1,0 +1,20 @@
+package app;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String[] vect = sc.nextLine().split(" ");
+		
+			if (vect[1] == "+") {
+				int number1 = Integer.parseInt(vect[0]);
+				int number2 = Integer.parseInt(vect[2]);
+				int soma = number1 + number2;
+				System.out.println(soma);
+			}
+		}
+}

@@ -1,0 +1,28 @@
+package app;
+
+import java.util.Scanner;
+
+import entities.Account;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		Account account = new Account();
+		
+		System.out.println("number:");
+		int number = sc.nextInt();
+		System.out.println("holder:");
+		String holder = sc.next();
+		System.out.println("deposit:");
+		double deposit = sc.nextDouble();
+		account.deposit(deposit);
+		System.out.println("withdraw:");
+		double withdraw = sc.nextDouble();
+		account.withdraw(withdraw);
+
+	}
+
+}

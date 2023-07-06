@@ -1,0 +1,11 @@
+package entities;
+
+public class Account {
+	
+	private int accNumber;
+	private String accName
+	
+	
+	
+	
+}

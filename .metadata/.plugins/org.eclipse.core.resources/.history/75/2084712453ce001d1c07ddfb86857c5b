@@ -1,0 +1,48 @@
+package entities;
+
+public class Conta {
+	
+	private Integer number;
+	private String holder;
+	private Double balance;
+	
+	public Conta(Integer number, String holder, double initialDeposit) {
+		this.number = number;
+		this.holder = holder;
+		deposit(initialDeposit);
+	}
+	
+	public Conta(Integer number, String holder) {
+		this.number = number;
+		this.holder = holder;
+	}
+
+	public Integer getNumber() {
+		return number;
+	}
+
+	public String getHolder() {
+		return holder;
+	}
+
+	public void setHolder(String holder) {
+		this.holder = holder;
+	}
+
+	public Double getBalance() {
+		return balance;
+	}
+	
+	public void deposit(double amount) {
+		balance += amount;
+	}
+	
+	public void withdraw(double amount) {
+		balance -= amount + 0.5;
+	}
+	
+	public String toString() {
+		return "acc number: " + number + "acc holder: " + holder + "balance: " + balance;
+	}
+
+}

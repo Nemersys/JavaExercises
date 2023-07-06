@@ -1,0 +1,26 @@
+package app;
+
+import java.sql.SQLException;
+
+public class Main {
+
+	public static void main(String[] args) throws SQLException {
+//		Employee employee = new Employee(1, 12345, "joão", "marcelo", 3);
+//		
+//		System.out.println(employee);
+		
+//		Connection con = Database.getConnection();
+//		
+//		if (con != null) {
+//			System.out.println("Database conection sucessfull");
+//		}
+		
+		EmployeeDAO employeeDAO = new EmployeeDAOimpl();
+		
+		Employee employee = employeeDAO.get(10);
+		
+		System.out.println(employee);
+
+	}
+
+}

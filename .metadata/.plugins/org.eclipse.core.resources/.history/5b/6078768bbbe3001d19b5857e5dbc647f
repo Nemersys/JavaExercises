@@ -1,0 +1,30 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Shape;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		List<Shape> list = new ArrayList<>();
+		
+		System.out.println("Enter the number of shapes: ");
+		int shapeQ = sc.nextInt();
+		
+		for (int i = 0; i <= shapeQ; i++) {
+			System.out.println("Rectangle or Circle? (r/c)");
+			String rc = sc.next();
+			System.out.println("color:");
+			String color = sc.next();
+			if
+		}
+
+	}
+
+}

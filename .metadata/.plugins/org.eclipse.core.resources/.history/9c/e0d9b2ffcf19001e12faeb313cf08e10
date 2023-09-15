@@ -1,7 +1,0 @@
-package chess.pieces;
-
-import chess.ChessPiece;
-
-public class Rock extends ChessPiece {
-
-}

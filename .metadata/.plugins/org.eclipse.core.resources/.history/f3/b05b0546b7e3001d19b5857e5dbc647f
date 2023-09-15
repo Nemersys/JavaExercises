@@ -1,9 +1,0 @@
-package entities;
-
-public abstract class Shape {
-	
-	protected Color color;
-	
-	
-
-}

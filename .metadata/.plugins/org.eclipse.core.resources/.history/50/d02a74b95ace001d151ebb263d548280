@@ -1,9 +1,0 @@
-package entities;
-
-public class Entities {
-	
-	private String name;
-	private String email;
-	private int room;
-
-}

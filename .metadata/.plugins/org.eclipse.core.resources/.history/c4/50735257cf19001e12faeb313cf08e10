@@ -1,8 +1,0 @@
-package chess;
-
-public enum Color {
-	
-	int BLACK 1,
-	int WHITE 2
-
-}
